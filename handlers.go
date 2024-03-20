@@ -7,13 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type boroughInterface struct {
-	Borough string `json:"alcaldia"`
-}
-
 func Test(c *gin.Context) {
 	// Body Http
-	buf := make([]byte, 1024)
+	buf := make([]byte, 4096)
 	num, _ := c.Request.Body.Read(buf)
 	reqBody := string(buf[0:num])
 	fmt.Println(reqBody)
